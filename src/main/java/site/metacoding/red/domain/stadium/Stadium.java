@@ -11,4 +11,7 @@ public class Stadium {
 	private Integer id;
 	private String name;
 	private Timestamp createdAt;
+	
+	// db에 없는 값
+	private Integer no;
 }	
