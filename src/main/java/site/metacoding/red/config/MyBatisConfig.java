@@ -8,6 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @Configuration
@@ -21,8 +22,8 @@ public class MyBatisConfig {
         sessionFactory.setDataSource(dataSource);
         sessionFactory.setMapperLocations(
         		new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
-        //Resource myBatisConfig = new PathMatchingResourcePatternResolver().getResource("classpath:mybatis-config.xml");
-        //sessionFactory.setConfigLocation(myBatisConfig);
+        Resource myBatisConfig = new PathMatchingResourcePatternResolver().getResource("classpath:mybatis-config.xml");
+        sessionFactory.setConfigLocation(myBatisConfig);
         
         org.apache.ibatis.session.Configuration config = 
         		new org.apache.ibatis.session.Configuration();
