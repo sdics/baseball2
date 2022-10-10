@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.red.domain.stadium.Stadium;
 import site.metacoding.red.service.StadiumService;
 import site.metacoding.red.web.dto.CMRespDto;
-import site.metacoding.red.web.dto.StadiumInsertReqDto;
+import site.metacoding.red.web.dto.stadium.StadiumInsertReqDto;
 
 @RequiredArgsConstructor
 @Controller

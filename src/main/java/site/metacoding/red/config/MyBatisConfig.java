@@ -1,3 +1,4 @@
+
 package site.metacoding.red.config;
 
 import javax.sql.DataSource;
@@ -24,11 +25,6 @@ public class MyBatisConfig {
         		new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
         Resource myBatisConfig = new PathMatchingResourcePatternResolver().getResource("classpath:mybatis-config.xml");
         sessionFactory.setConfigLocation(myBatisConfig);
-        
-        org.apache.ibatis.session.Configuration config = 
-        		new org.apache.ibatis.session.Configuration();
-        config.setMapUnderscoreToCamelCase(true);
-        sessionFactory.setConfiguration(config);
         return sessionFactory.getObject();
     }
 
