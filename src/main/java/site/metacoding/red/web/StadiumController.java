@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.red.domain.stadium.Stadium;
 import site.metacoding.red.service.StadiumService;
+import site.metacoding.red.web.dto.CMRespDto;
+import site.metacoding.red.web.dto.StadiumInsertReqDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -19,7 +21,7 @@ public class StadiumController {
 
 	private final StadiumService stadiumService;
 	
-	@GetMapping("/stadium")
+	@GetMapping({"/", "/stadium"})
 	public String list(Model model) {
 		List<Stadium> stadiumList = stadiumService.목록보기();
 		model.addAttribute("stadiumList", stadiumList);
@@ -33,7 +35,7 @@ public class StadiumController {
 
 	@PostMapping("/stadium")
 	public @ResponseBody CMRespDto<?> insert(@RequestBody StadiumInsertReqDto stadiumInsertReqDto){
-		stadiumService.경기장등록(stadiumInertReqDto);
+		stadiumService.경기장등록(stadiumInsertReqDto);
 		return new CMRespDto<>(1, "경기장등록성공", null);
 	}
 }
