@@ -36,3 +36,12 @@ INSERT INTO player(NAME, position, team_id, is_outer, createdAt) VALUES('곽빈'
 INSERT INTO player(NAME, position, team_id, is_outer, createdAt) VALUES('이정후', '외야수', 3, 0,NOW());
 COMMIT;
 ```
+```
+
+### Tip
+
+#### MariaDB auto commit 해제 하기
+```sql
+show variables like 'autocommit%';
+SET AUTOCOMMIT = FALSE;
+```
